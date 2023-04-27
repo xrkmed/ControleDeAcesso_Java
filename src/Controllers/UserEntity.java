@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import Internal.GlobalPermissions;
 import Internal.LocationsInterface;
+import Internal.RouteEntityInterface;
 import Internal.UserInterface;
 import Internal.UserPermissionsInterface;
 
@@ -14,7 +15,7 @@ public class UserEntity implements UserInterface {
 	private long userUniqueId;
 	private String userIdentificator;
 	private final UserPermissionsInterface userPermissions = new UserPermissions();
-	private final HashMap<Long, RouteEntity> routeHistory = new HashMap<>();
+	private final HashMap<Long, RouteEntityInterface> routeHistory = new HashMap<>();
 	
 	public UserEntity() {
 		
@@ -34,7 +35,7 @@ public class UserEntity implements UserInterface {
 	public void imprimirRotas() {
 		System.out.println("Log> Confira todos os caminhos que " + userIdentificator + " fez:");
 		
-		routeHistory.forEach((Long uniqueId, RouteEntity route) -> {
+		routeHistory.forEach((Long uniqueId, RouteEntityInterface route) -> {
 			if(route.getFromLocation() != null) {
 				System.out.println("Log> O Usuario " + userIdentificator + " foi de " + route.getFromLocation() + " para " + route.getToLocation() + " as " + route.getDateString());
 			}else {
