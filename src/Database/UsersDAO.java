@@ -3,9 +3,6 @@ package Database;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import Controllers.Locations;
-import Controllers.UserEntity;
-import Exceptions.UserNotFound;
 import Internal.LocationsInterface;
 import Internal.UserInterface;
 
@@ -28,9 +25,7 @@ public class UsersDAO {
 	
 	//Procurar aonde um determinado usuario esta
 	public LocationsInterface findUser(UserInterface user) {
-		LocationsInterface loc = userLocation.getOrDefault(user, null);
-		
-		return loc;
+		return userLocation.getOrDefault(user, null);
 	}
 	
 	//Saber quem esta em determinada localizacao
