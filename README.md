@@ -25,7 +25,7 @@ Dessa forma, é possível manter um controle rigoroso sobre quem entra e sai de 
 
 ## Registros do sistema
 
-![App Screenshot](https://i.imgur.com/N3ubQn9.png)
+![App Screenshot](https://i.imgur.com/kPzfKfx.png)
 
 ## Uso/Testes
 
