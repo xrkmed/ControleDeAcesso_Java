@@ -20,7 +20,7 @@ Dessa forma, é possível manter um controle rigoroso sobre quem entra e sai de 
 - Controle de acesso em tempo real de funcionarios
 - Gerencia de permissoes para acesso em ambientes
 - Cada funcionario possui um ID unico com as suas devidas permissoes
-- Java
+- Para garantir a seguranca do projeto, as funcoes foram escritas com base em interfaces que ajudam a promover o baixo acoplamento entre as classes e a facilitar a manutenção do código no futuro.
 
 
 ## Registros do sistema
