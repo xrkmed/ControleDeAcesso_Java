@@ -44,10 +44,11 @@ public class UsersDAO {
 	//Executar travessia de uma localizacao para outra localizacao
 	public boolean updateUserLocation(UserInterface user, LocationsInterface newLocation) {
 		try {
-			LocationsInterface oldLocation = findUser(user);
 			if(newLocation.userCanJoin(user)) {
 				userLocation.compute(user, (usuario, location) -> {
 					if(location != newLocation) {
+						user.addRouteEntity(location, newLocation);
+						
 						location = newLocation;
 					}
 					

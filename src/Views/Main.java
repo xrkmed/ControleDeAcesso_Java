@@ -1,5 +1,6 @@
 package Views;
 
+import Controllers.AdminEntity;
 import Controllers.Locations;
 import Controllers.PontoDeAcesso;
 import Controllers.UserEntity;
@@ -23,6 +24,9 @@ public class Main {
 		
 		//Registrar usuarios
 		UserEntity user = new UserEntity(100000, "John Friedrich");
+		
+		//Usuario de Admin tem permissoa para entrar em todas as salas
+		AdminEntity admin = new AdminEntity(100001, "CEO Krugans Martin");
 		
 		//Adicionar permissoes aos usuarios
 		user.addPermission(permSalaPrincipal);
@@ -60,10 +64,25 @@ public class Main {
 			System.out.println("O Usuario " + user.getUserIdentificator() + " esta tentando acessar uma sala (" + locSalaFaxina + ") que ele nao tem acesso.");
 		}
 		
+		if(point1.addUser(user)) {
+			System.out.println("O Usuario " + user.getUserIdentificator() + " entrou na " + point1.getName());
+		}else {
+			System.out.println("O Usuario " + user.getUserIdentificator() + " esta tentando acessar uma sala (" + point1.getName() + ") que ele nao tem acesso.");
+		}
+		
+		if(point2.addUser(admin)) {
+			System.out.println("O Usuario " + admin.getUserIdentificator() + " entrou na " + point2.getName());
+		}else {
+			System.out.println("O Usuario " + admin.getUserIdentificator() + " esta tentando acessar uma sala (" + point2.getName()+ ") que ele nao tem acesso.");
+		}
+		
 		//Log final
 		System.out.println("> Log: Existem " + point1.getUsers().size() + " pessoas no ponto de acesso: " + point1.getName());
 		System.out.println("> Log: Existem " + point2.getUsers().size() + " pessoas no ponto de acesso: " + point2.getName());
 		System.out.println("> Log: Existem " + point3.getUsers().size() + " pessoas no ponto de acesso: " + point3.getName());
+		
+		System.out.println("-------------------------------------------------------------------------");
+		user.imprimirRotas();
 		
 	}
 

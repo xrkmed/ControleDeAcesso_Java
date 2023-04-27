@@ -1,5 +1,7 @@
 package Internal;
 
+import Controllers.Locations;
+
 public interface UserInterface {
 
 	//Interface para controle das funcoes que um usuario pode ter
@@ -7,5 +9,6 @@ public interface UserInterface {
 	public long getUserUniqueId(); // Id do cracha do usuario
 	public String getUserIdentificator(); // Nome do usuario
 	public void addPermission(GlobalPermissions perm); // Rodar apenas em casos de promocoes hierarquicas ou carregamento da database;
+	public boolean addRouteEntity(LocationsInterface oldLocation, LocationsInterface newLocation);
 	
 }
